@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -55,7 +55,9 @@ function App() {
             {isLoggedIn ? (
               <>
                 <li className="nav-item"><Link className="nav-link custom-link" to="/admin">OnlyMe</Link></li>
-                <li className="nav-item"><button className="btn btn-link nav-link custom-link" onClick={handleLogout}>Logout</button></li>
+                <li className="nav-item">
+                  <button className="btn btn-link nav-link custom-link" onClick={handleLogout}>Logout</button>
+                </li>
               </>
             ) : (
               <li className="nav-item"><Link className="nav-link custom-link" to="/login">Login</Link></li>
